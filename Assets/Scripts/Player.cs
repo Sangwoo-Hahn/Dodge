@@ -52,13 +52,13 @@ public class Player : MonoBehaviour {
                 delta = time_current - moveTime/(deltaCount+1);
             }
             if (direction == "UP") {
-                transform.position = new Vector3((float)position[0]*step, ((float)position[1] + deltaPos)*step, 0f);
+                transform.position = new Vector3((float)position[0]*step, (((float)position[1] + deltaPos - 4.5f) % 3 + 1.5f)*step, 0f);
             } else if (direction == "DOWN") {
-                transform.position = new Vector3((float)position[0]*step, ((float)position[1] - deltaPos)*step, 0f);
+                transform.position = new Vector3((float)position[0]*step, (((float)position[1] - deltaPos + 4.5f) % 3 - 1.5f)*step, 0f);
             } else if (direction == "LEFT") {
-                transform.position = new Vector3(((float)position[0] - deltaPos)*step, (float)position[1]*step, 0f);
+                transform.position = new Vector3((((float)position[0] - deltaPos + 4.5f) % 3 - 1.5f)*step, (float)position[1]*step, 0f);
             } else if (direction == "RIGHT") {
-                transform.position = new Vector3(((float)position[0] + deltaPos)*step, (float)position[1]*step, 0f);
+                transform.position = new Vector3((((float)position[0] + deltaPos - 4.5f) % 3 + 1.5f)*step, (float)position[1]*step, 0f);
             }
         } else {
             transform.position = new Vector3((float)position[0]*step, (float)position[1]*step, 0f);
