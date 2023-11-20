@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 
     Queue<string> moveState = new Queue<string>();
     // [SerializeField]
-    private float moveTime = 0.2f;
+    private float moveTime = 0.1f;
     private int[] position = {0, 0};
     private float step = 2f;
     private bool moving = false;
@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
     private float time_start;
     private float time_current;
     private float delta = 0f;
+    private int deltaCount = 0;
     private string direction;
     private float t;
     private float deltaPos;
@@ -26,24 +27,29 @@ public class Player : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown(KeyCode.UpArrow)) {
             moveState.Enqueue("UP");
+            // Debug.Log("UP");
         } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
             moveState.Enqueue("DOWN");
         } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             moveState.Enqueue("LEFT");
         } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
             moveState.Enqueue("RIGHT");
+            // Debug.Log("RIGHT");
         }
         // float verticalInput = Input.GetKeyDown("Vertical");
         // Vector3 moveTo = new Vector3(horizontalInput, verticalInput, 0f);
         // transform.position += moveTo * moveSpeed * Time.deltaTime;
         if (moving) {
             time_current = Time.time - time_start;
-            t = time_current / (moveTime/(moveState.Count+1));
+            t = time_current / (moveTime/(deltaCount+1));
             deltaPos = - (t-1)*(t-1)*(t-1)*(t-1)*Mathf.Cos(t*t*t*30);
-            Debug.Log(Time.time);
-            if (time_current > moveTime/(moveState.Count+1)) {
+            // Debug.Log(Time.time);
+            // Debug.Log(position[0]);
+            // Debug.Log(position[1]);
+            // Debug.Log(moveState);
+            if (time_current > moveTime/(deltaCount+1)) {
                 moving = false;
-                delta = time_current - moveTime/(moveState.Count+1);
+                delta = time_current - moveTime/(deltaCount+1);
             }
             if (direction == "UP") {
                 transform.position = new Vector3((float)position[0]*step, ((float)position[1] + deltaPos)*step, 0f);
@@ -60,6 +66,7 @@ public class Player : MonoBehaviour {
                 moving = true;
                 time_start = Time.time - Time.deltaTime - delta;
                 direction = moveState.Dequeue();
+                deltaCount = moveState.Count;
                 if (direction == "UP") {
                     position[1] += 1;
                 } else if (direction == "DOWN") {
