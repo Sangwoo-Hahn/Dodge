@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 
     Queue<string> moveState = new Queue<string>();
     // [SerializeField]
-    private float moveTime = 0.1f;
+    private float moveTime = 0.15f;
     private int[] position = {0, 0};
     private float step = 2f;
     private bool moving = false;
@@ -50,6 +50,7 @@ public class Player : MonoBehaviour {
             if (time_current > moveTime/(deltaCount+1)) {
                 moving = false;
                 delta = time_current - moveTime/(deltaCount+1);
+                deltaCount = moveState.Count;
             }
             if (direction == "UP") {
                 transform.position = new Vector3((float)position[0]*step, (((float)position[1] + deltaPos - 4.5f) % 3 + 1.5f)*step, 0f);
@@ -66,7 +67,6 @@ public class Player : MonoBehaviour {
                 moving = true;
                 time_start = Time.time - Time.deltaTime - delta;
                 direction = moveState.Dequeue();
-                deltaCount = moveState.Count;
                 if (direction == "UP") {
                     position[1] += 1;
                 } else if (direction == "DOWN") {
