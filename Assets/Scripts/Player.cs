@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 
     Queue<string> moveState = new Queue<string>();
     // [SerializeField]
-    private float moveTime = 0.15f;
+    private float moveTime = 0.2f;
     private int[] position = {0, 0};
     private float step = 2f;
     private bool moving = false;
@@ -78,6 +78,7 @@ public class Player : MonoBehaviour {
                 }
                 position[0] = (position[0]+4)%3-1;
                 position[1] = (position[1]+4)%3-1;
+                AudioManager.instance.PlaySfx(AudioManager.Sfx.Move);
             }
         }
     }
