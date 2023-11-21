@@ -42,7 +42,7 @@ public class Player : MonoBehaviour {
         if (moving) {
             time_current = Time.time - time_start;
             t = time_current / (moveTime/(deltaCount+1));
-            deltaPos = - (t-1)*(t-1)*(t-1)*(t-1)*Mathf.Cos(t*t*t*30);
+            deltaPos = - (t-1)*(t-1)*(t-1)*(t-1)*Mathf.Cos(t*t*t*40);
             // Debug.Log(Time.time);
             // Debug.Log(position[0]);
             // Debug.Log(position[1]);
