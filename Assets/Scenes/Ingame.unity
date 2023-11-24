@@ -222,6 +222,7 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!50 &129809955
 Rigidbody2D:
   serializedVersion: 4
@@ -229,12 +230,20 @@ Rigidbody2D:
 --- !u!61 &129809955
 BoxCollider2D:
 >>>>>>> sangwoo1
+=======
+--- !u!50 &129809955
+Rigidbody2D:
+  serializedVersion: 4
+>>>>>>> sangwoo2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129809951}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> sangwoo2
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -243,10 +252,13 @@ BoxCollider2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
+<<<<<<< HEAD
 =======
   m_Enabled: 1
   m_Density: 1
 >>>>>>> sangwoo1
+=======
+>>>>>>> sangwoo2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -255,10 +267,14 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> sangwoo2
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+<<<<<<< HEAD
 =======
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
@@ -290,6 +306,8 @@ BoxCollider2D:
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 >>>>>>> sangwoo1
+=======
+>>>>>>> sangwoo2
 --- !u!1 &283605080
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,8 +524,8 @@ GameObject:
   - component: {fileID: 599676647}
   - component: {fileID: 599676646}
   - component: {fileID: 599676650}
-  - component: {fileID: 599676652}
-  - component: {fileID: 599676651}
+  - component: {fileID: 599676649}
+  - component: {fileID: 599676648}
   m_Layer: 0
   m_Name: Lasercontainer
   m_TagString: Untagged
@@ -576,14 +594,14 @@ Transform:
   m_GameObject: {fileID: 599676645}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 2, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2050251871}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &599676650
+--- !u!114 &599676648
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -595,9 +613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9d38ab5147e7c409eeb34f2403ae78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script1: {fileID: 599676652}
-  script2: {fileID: 599676651}
---- !u!114 &599676651
+  script1: {fileID: 599676650}
+  script2: {fileID: 599676649}
+--- !u!114 &599676649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -609,9 +627,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c593d80b0142a1c4a8a8165196340732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Position_End: {x: -10, y: 2, z: 0}
+  m_Position_End: {x: -10, y: 0, z: 0}
   m_RunTime: 1
---- !u!114 &599676652
+--- !u!114 &599676650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -623,7 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a35bbd1cdd132844fabbeeccf1eea857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Position_End: {x: -6, y: 2, z: 0}
+  m_Position_End: {x: -6, y: 0, z: 0}
   m_RunTime: 1
 --- !u!1 &976180140
 GameObject:
@@ -780,7 +798,7 @@ Transform:
   m_GameObject: {fileID: 1202141128}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: -0, z: 0}
+  m_LocalPosition: {x: 4, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 10.5563, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1016,9 +1034,9 @@ GameObject:
   - component: {fileID: 2050251874}
   - component: {fileID: 2050251873}
   - component: {fileID: 2050251872}
-  - component: {fileID: 2050251875}
   - component: {fileID: 2050251877}
   - component: {fileID: 2050251876}
+  - component: {fileID: 2050251875}
   m_Layer: 0
   m_Name: Lasershooter
   m_TagString: Untagged
@@ -1109,7 +1127,7 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.3082272
+        time: 0.0752182
         value: 0
         inSlope: 0
         outSlope: 0
@@ -1222,28 +1240,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2050251870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c0e93932291164ca354051fcb7f7e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 0}
-  startWidth: 0
-  endWidth: 1
-  duration: 1
---- !u!114 &2050251876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050251870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0034a1e817801c74fbe7bba9571f9336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script1: {fileID: 2050251875}
-  script2: {fileID: 2050251877}
---- !u!114 &2050251877
+  script1: {fileID: 2050251877}
+  script2: {fileID: 2050251876}
+--- !u!114 &2050251876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1256,8 +1258,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 0}
-  startWidth: 1
+  startWidth: 0.5
   endWidth: 0
+  duration: 1
+--- !u!114 &2050251877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050251870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c0e93932291164ca354051fcb7f7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 0}
+  startWidth: 0
+  endWidth: 0.5
   duration: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
