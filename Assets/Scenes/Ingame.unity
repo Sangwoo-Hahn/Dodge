@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 129809953}
   - component: {fileID: 129809952}
   - component: {fileID: 129809955}
+  - component: {fileID: 129809956}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -221,29 +222,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!50 &129809955
 Rigidbody2D:
   serializedVersion: 4
-=======
---- !u!61 &129809955
-BoxCollider2D:
->>>>>>> sangwoo1
-=======
---- !u!50 &129809955
-Rigidbody2D:
-  serializedVersion: 4
->>>>>>> sangwoo2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129809951}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> sangwoo2
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -252,13 +238,6 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-<<<<<<< HEAD
-=======
-  m_Enabled: 1
-  m_Density: 1
->>>>>>> sangwoo1
-=======
->>>>>>> sangwoo2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -266,16 +245,26 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> sangwoo2
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
-<<<<<<< HEAD
-=======
+--- !u!61 &129809956
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129809951}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -305,9 +294,6 @@ Rigidbody2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
->>>>>>> sangwoo1
-=======
->>>>>>> sangwoo2
 --- !u!1 &283605080
 GameObject:
   m_ObjectHideFlags: 0
