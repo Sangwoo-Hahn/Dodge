@@ -14,7 +14,7 @@ public class StartCursor : MonoBehaviour
     Queue<string> moveState = new Queue<string>();
     // [SerializeField]
     private float moveTime = 0.02f;
-    private int position = 0;
+    public int position = 0;
     private float step = 0.9f;
     private bool moving = false;
 
@@ -62,7 +62,7 @@ public class StartCursor : MonoBehaviour
                 } else if (direction == "DOWN") {
                     position -= 1;
                 } else if (direction == "SPACE") {
-                    if (position == 0) SceneManager.LoadScene("Ingame");
+                    //if (position == 0) SceneManager.LoadScene("Ingame");
                 }
                 position = (position+5)%3-2;
                 //AudioManager.instance.PlaySfx(AudioManager.Sfx.Move);
