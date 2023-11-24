@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 
     Queue<string> moveState = new Queue<string>();
     // [SerializeField]
-    private float moveTime = 0.2f;
+    private float moveTime = 0.1f;
     private int[] position = {0, 0};
     private float step = 2f;
     private bool moving = false;
