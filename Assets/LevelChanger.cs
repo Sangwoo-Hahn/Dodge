@@ -6,13 +6,15 @@ using UnityEditor.SceneManagement;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class LevelChanger : MonoBehaviour
 {
     public Animator animator;
     public StartCursor startCursor;
     public StageCursor stageCursor;
-    public string InputKey;
+    private string InputKey;
+    private bool InputDetect = false;
     private string scenename;
 
     void Start() {
@@ -20,13 +22,15 @@ public class LevelChanger : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (InputDetect == false && Input.GetKeyDown(KeyCode.Space)) {
             animator.SetTrigger("FadeOut");
             InputKey = "Space";
+            InputDetect = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Backspace)) {
+        else if (InputDetect == false && Input.GetKeyDown(KeyCode.Backspace)) {
             animator.SetTrigger("FadeOut");
             InputKey = "Backspace";
+            InputDetect = true;
         }
     }
 
@@ -56,5 +60,6 @@ public class LevelChanger : MonoBehaviour
                 SceneManager.LoadScene("Stages");
             }
         }
+        InputDetect = false;
     }
 }
