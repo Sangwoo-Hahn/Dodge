@@ -14,9 +14,9 @@ public class LevelChanger : MonoBehaviour
     public StageCursor stageCursor;
 
     private string InputKey;
-    [SerializeField]
     private bool InputDetect = false;
     private string scenename;
+    private int select;
 
     void Start() {
         startCursor.position = 0;
@@ -27,18 +27,20 @@ public class LevelChanger : MonoBehaviour
             InputDetect = true;
             InputKey = "Space";
             animator.SetTrigger("FadeOut");
+            select = startCursor.position;
         }
         else if (InputDetect == false && Input.GetKeyDown(KeyCode.Backspace)) {
             InputDetect = true;
             InputKey = "Backspace";
             animator.SetTrigger("FadeOut");
+            select = startCursor.position;
         }
     }
 
     public void OnFadeComplete() {
         scenename = SceneManager.GetActiveScene().name;
         if (InputKey == "Space") {
-            if (scenename == "Lobby" && startCursor.position == 0) {
+            if (scenename == "Lobby" && select == 0) {
                 SceneManager.LoadScene("Stages");
             }
             else if (scenename == "Stages") {
