@@ -7,13 +7,14 @@ public class ScriptControl : MonoBehaviour
     private Vector3 m_Position_Default;
     public lasermove1 script1;
     public lasermove2 script2;
+    [SerializeField] private float time1 = 0.0f;
+    [SerializeField] private float time2 = 3.0f;
 
     void Start()
     {
-        //Invoke("StartScript2", 0.0f);
-        StartScript1();
+        Invoke("StartScript1", time1);
 
-        Invoke("StartScript2", 3.0f);
+        Invoke("StartScript2", time2);
 
     }
 

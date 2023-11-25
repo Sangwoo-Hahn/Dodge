@@ -350,6 +350,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script1: {fileID: 424897977}
   script2: {fileID: 424897976}
+  time1: 0
+  time2: 3
 --- !u!114 &424897976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,6 +705,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script1: {fileID: 599676650}
   script2: {fileID: 599676649}
+  time1: 0
+  time2: 3
 --- !u!114 &599676649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,6 +964,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script1: {fileID: 911087485}
   script2: {fileID: 911087484}
+  time1: 1.5
+  time2: 2
 --- !u!114 &911087484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,6 +1265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script1: {fileID: 1648494871}
   script2: {fileID: 1648494870}
+  time1: 0
+  time2: 3
 --- !u!114 &1648494870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1593,6 +1601,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script1: {fileID: 1927364170}
   script2: {fileID: 1927364169}
+  time1: 1.5
+  time2: 2
 --- !u!114 &1927364169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2103,6 +2113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script1: {fileID: 2050251877}
   script2: {fileID: 2050251876}
+  time1: 1.5
+  time2: 2
 --- !u!114 &2050251876
 MonoBehaviour:
   m_ObjectHideFlags: 0
