@@ -12,7 +12,13 @@ public class LevelChanger : MonoBehaviour
     public Animator animator;
     public StartCursor startCursor;
     public StageCursor stageCursor;
+<<<<<<< Updated upstream
     public string InputKey;
+=======
+    private string InputKey;
+    [SerializeField]
+    private bool InputDetect = false;
+>>>>>>> Stashed changes
     private string scenename;
 
     void Start() {
@@ -20,6 +26,7 @@ public class LevelChanger : MonoBehaviour
     }
 
     void Update() {
+<<<<<<< Updated upstream
         if (Input.GetKeyDown(KeyCode.Space)) {
             animator.SetTrigger("FadeOut");
             InputKey = "Space";
@@ -27,6 +34,17 @@ public class LevelChanger : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Backspace)) {
             animator.SetTrigger("FadeOut");
             InputKey = "Backspace";
+=======
+        if (InputDetect == false && Input.GetKeyDown(KeyCode.Space)) {
+            InputDetect = true;
+            InputKey = "Space";
+            animator.SetTrigger("FadeOut");
+        }
+        else if (InputDetect == false && Input.GetKeyDown(KeyCode.Backspace)) {
+            InputDetect = true;
+            InputKey = "Backspace";
+            animator.SetTrigger("FadeOut");
+>>>>>>> Stashed changes
         }
     }
 
