@@ -13,7 +13,7 @@ public class ScriptControl : MonoBehaviour
         //Invoke("StartScript2", 0.0f);
         StartScript1();
 
-        Invoke("StartScript2", 4.0f);
+        Invoke("StartScript2", 3.0f);
 
     }
 

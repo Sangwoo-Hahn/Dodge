@@ -10,7 +10,7 @@ public class LineWidthControl : MonoBehaviour
 
     void Start()
     {
-        Invoke("StartScript1", 1.0f);
+        Invoke("StartScript1", 1.5f);
 
         Invoke("StartScript2", 2.0f);
 

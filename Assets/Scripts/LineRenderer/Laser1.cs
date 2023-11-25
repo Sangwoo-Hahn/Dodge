@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Laser1 : MonoBehaviour
 {
-    [SerializeField] private float defDistanceRay = 100;
+    [SerializeField] private float defDistanceRay = 10;
     public Transform laserbeam;
     public LineRenderer m_lineRenderer;
     Transform m_transform;
@@ -24,7 +24,7 @@ public class Laser1 : MonoBehaviour
     }
 
     void ShootLaser() {
-        Vector2 direction = transform.right; // 레이저 방향, 일단 오른쪽
+        Vector3 direction = transform.right; // 레이저 방향, 일단 오른쪽
         RaycastHit2D hit = Physics2D.Raycast(m_transform.position, direction);  //물리적 발사 (wall 닿으면 hit에 저장)   
 
         if ( hit ){ // 뭔가에 닿았으면 (아마 공)
@@ -32,7 +32,7 @@ public class Laser1 : MonoBehaviour
             // 닿은 물체가 공이면 게임 오버
         }
         else { // 뭔가에 닿지 않으면
-            Draw2DRay(laserbeam.position, laserbeam.transform.right * defDistanceRay);  // 지정 거리까지 그리기
+            Draw2DRay(laserbeam.position, laserbeam.position + direction * defDistanceRay);  // 지정 거리까지 그리기
         }
     }
 
