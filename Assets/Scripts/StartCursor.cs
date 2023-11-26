@@ -17,6 +17,7 @@ public class StartCursor : MonoBehaviour
     public int position = 0;
     private float step = 0.9f;
     private bool moving = false;
+    private bool fading = false;
 
     private float y = 0f;
 
@@ -40,32 +41,37 @@ public class StartCursor : MonoBehaviour
         // float verticalInput = Input.GetKeyDown("Vertical");
         // Vector3 moveTo = new Vector3(horizontalInput, verticalInput, 0f);
         // transform.position += moveTo * moveSpeed * Time.deltaTime;
-        if (moving) {
-            y = y + (position*step-y)*Time.deltaTime/moveTime;
-            if (position*step-y > -0.01f && position*step-y < 0.01f) {
-                moving = false;
-                delta = time_current - moveTime/(deltaCount+1);
-                deltaCount = moveState.Count;
-            }
-            if (direction == "UP") {
-                transform.position = new Vector3(-3f, y-1.4f, 0f);
-            } else if (direction == "DOWN") {
-                transform.position = new Vector3(-3f, y-1.4f, 0f);
-            }
-        } else {
-            transform.position = new Vector3(-3f, (float)position*step-1.4f, 0f);
-            if (moveState.Count > 0) {
-                moving = true;
-                direction = moveState.Dequeue();
-                if (direction == "UP") {
-                    position += 1;
-                } else if (direction == "DOWN") {
-                    position -= 1;
-                } else if (direction == "SPACE") {
-                    //if (position == 0) SceneManager.LoadScene("Ingame");
+        if (!fading) {
+            if (moving) {
+                y = y + (position*step-y)*Time.deltaTime/moveTime;
+                if (position*step-y > -0.01f && position*step-y < 0.01f) {
+                    moving = false;
+                    delta = time_current - moveTime/(deltaCount+1);
+                    deltaCount = moveState.Count;
                 }
-                position = (position+5)%3-2;
-                //AudioManager.instance.PlaySfx(AudioManager.Sfx.Move);
+                if (direction == "UP") {
+                    transform.position = new Vector3(-3f, y-1.4f, 0f);
+                } else if (direction == "DOWN") {
+                    transform.position = new Vector3(-3f, y-1.4f, 0f);
+                }
+            } else {
+                transform.position = new Vector3(-3f, (float)position*step-1.4f, 0f);
+                if (moveState.Count > 0) {
+                    moving = true;
+                    direction = moveState.Dequeue();
+                    if (direction == "UP") {
+                        position += 1;
+                    } else if (direction == "DOWN") {
+                        position -= 1;
+                    } else if (direction == "SPACE") {
+                        if (position == 0){
+                            fading = true;
+                            LevelChanger.instance.NextLevel("Stages");
+                        }
+                    }
+                    position = (position+5)%3-2;
+                    //AudioManager.instance.PlaySfx(AudioManager.Sfx.Move);
+                }
             }
         }
     }
