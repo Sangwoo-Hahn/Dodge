@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Fireball : MonoBehaviour {
     [SerializeField]
+    ParticleSystem FireBall;
+    ParticleSystem.ForceOverLifetimeModule force;
+    ParticleSystem.ShapeModule shape;
 
     Queue<string> moveState = new Queue<string>();
     // [SerializeField]
@@ -19,6 +22,12 @@ public class Player : MonoBehaviour {
     private string direction;
     private float t;
     private float deltaPos;
+
+    void Awake() {
+        FireBall = GetComponent<ParticleSystem>();
+        force = FireBall.forceOverLifetime;
+        shape = FireBall.shape;
+    }
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.UpArrow)) {
@@ -48,14 +57,26 @@ public class Player : MonoBehaviour {
             }
             if (direction == "UP") {
                 transform.position = new Vector3((float)position[0]*step, (((float)position[1] + deltaPos - 4.5f) % 3 + 1.5f)*step, 0f);
+                force.y = new ParticleSystem.MinMaxCurve(-5f);
             } else if (direction == "DOWN") {
                 transform.position = new Vector3((float)position[0]*step, (((float)position[1] - deltaPos + 4.5f) % 3 - 1.5f)*step, 0f);
+                force.y = new ParticleSystem.MinMaxCurve(10f);
             } else if (direction == "LEFT") {
                 transform.position = new Vector3((((float)position[0] - deltaPos + 4.5f) % 3 - 1.5f)*step, (float)position[1]*step, 0f);
+                // force.x = new ParticleSystem.MinMaxCurve(10f);
+                // shape.rotation = new Vector3(270, 45, 0);
+                transform.rotation = Quaternion.Euler(0, 0, -20f);
             } else if (direction == "RIGHT") {
                 transform.position = new Vector3((((float)position[0] + deltaPos - 4.5f) % 3 + 1.5f)*step, (float)position[1]*step, 0f);
+                // force.x = new ParticleSystem.MinMaxCurve(-10f);
+                // shape.rotation = new Vector3(270, -45, 0);
+                transform.rotation = Quaternion.Euler(0, 0, 20f);
             }
         } else {
+            // force.x = new ParticleSystem.MinMaxCurve(0f);
+            force.y = new ParticleSystem.MinMaxCurve(0f);
+            shape.rotation = new Vector3(270, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             transform.position = new Vector3((float)position[0]*step, (float)position[1]*step, 0f);
             if (moveState.Count > 0) {
                 moving = true;
