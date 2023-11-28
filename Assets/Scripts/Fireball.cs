@@ -57,20 +57,20 @@ public class Fireball : MonoBehaviour {
             }
             if (direction == "UP") {
                 transform.position = new Vector3((float)position[0]*step, (((float)position[1] + deltaPos - 4.5f) % 3 + 1.5f)*step, 0f);
-                force.y = new ParticleSystem.MinMaxCurve(-5f);
+                // force.y = new ParticleSystem.MinMaxCurve(-5f);
             } else if (direction == "DOWN") {
                 transform.position = new Vector3((float)position[0]*step, (((float)position[1] - deltaPos + 4.5f) % 3 - 1.5f)*step, 0f);
-                force.y = new ParticleSystem.MinMaxCurve(10f);
+                // force.y = new ParticleSystem.MinMaxCurve(10f);
             } else if (direction == "LEFT") {
                 transform.position = new Vector3((((float)position[0] - deltaPos + 4.5f) % 3 - 1.5f)*step, (float)position[1]*step, 0f);
                 // force.x = new ParticleSystem.MinMaxCurve(10f);
                 // shape.rotation = new Vector3(270, 45, 0);
-                transform.rotation = Quaternion.Euler(0, 0, -20f);
+                // transform.rotation = Quaternion.Euler(0, 0, -20f);
             } else if (direction == "RIGHT") {
                 transform.position = new Vector3((((float)position[0] + deltaPos - 4.5f) % 3 + 1.5f)*step, (float)position[1]*step, 0f);
                 // force.x = new ParticleSystem.MinMaxCurve(-10f);
                 // shape.rotation = new Vector3(270, -45, 0);
-                transform.rotation = Quaternion.Euler(0, 0, 20f);
+                // transform.rotation = Quaternion.Euler(0, 0, 20f);
             }
         } else {
             // force.x = new ParticleSystem.MinMaxCurve(0f);
